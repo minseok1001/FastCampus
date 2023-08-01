@@ -1,5 +1,5 @@
 variable "aws_region" {
-  default = "ap-northeast-2"
+  default = "us-east-1"
   type = string 
 }
 
@@ -19,6 +19,6 @@ variable "aws_vpc_public_subnets" {
 }
 
 variable "aws_azs"  {
-    default = ["ap-northeast-2a", "ap-northeast-2c"]
+    default = ["us-east-1a", "us-east-1b"]
     type = list(string)
 }
