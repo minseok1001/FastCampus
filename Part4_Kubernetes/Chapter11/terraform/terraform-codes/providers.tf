@@ -10,7 +10,7 @@ terraform {
   backend "s3" {
     bucket = "mskim-project-s3-tf-state"
     key = "terraform.tfstate"
-    region = "ap-northeast-2"
+    region = "us-east-1"
     dynamodb_table = "mskim-project-ddb-lock-table"
     encrypt = "true"
   }
