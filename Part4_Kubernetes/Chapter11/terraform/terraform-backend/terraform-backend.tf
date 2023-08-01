@@ -17,7 +17,7 @@ resource "aws_dynamodb_table" "test-ddb-lock-table" {
 
   attribute {
     name = "LockID"
-    type = "S"ㅣ
+    type = "S"
   }
 
   tags = {
