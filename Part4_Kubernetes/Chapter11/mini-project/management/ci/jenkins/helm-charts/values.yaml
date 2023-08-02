@@ -465,7 +465,7 @@ controller:
       kubernetes.io/ingress.class: alb
       alb.ingress.kubernetes.io/scheme: internet-facing
       alb.ingress.kubernetes.io/target-type: ip
-      alb.ingress.kubernetes.io/subnets: subnet-0e4d99d294ae3ef01, subnet-0a36dfa57bcb9fefe
+      alb.ingress.kubernetes.io/subnets: subnet-059830fd45570e405, subnet-0ede659b4cfc0b018
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
     # For Kubernetes >= 1.18 you should specify the ingress-controller via the field ingressClassName
