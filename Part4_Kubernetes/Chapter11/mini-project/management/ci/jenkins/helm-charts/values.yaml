@@ -102,7 +102,7 @@ controller:
   # being deprecated and replaced by `podSecurityContextOverride`.
   # Set runAsUser to 1000 to let Jenkins run as non-root user 'jenkins' which exists in 'jenkins/jenkins' docker image.
   # When setting runAsUser to a different value than 0 also set fsGroup to the same value:
-  runAsUser: 1000
+  runAsUser: 0
   fsGroup: 1000
   # If you have PodSecurityPolicies that require dropping of capabilities as suggested by CIS K8s benchmark, put them here
   securityContextCapabilities: {}
@@ -244,8 +244,8 @@ controller:
     - kubernetes:3900.va_dce992317b_4
     - workflow-aggregator:596.v8c21c963d92d
     - git:5.0.0
-    - configuration-as-code:1625.v27444588cc3d
-
+    - configuration-as-code:1647.ve39ca_b_829b_42
+    
   # Set to false to download the minimum required version of all dependencies.
   installLatestPlugins: true
 
