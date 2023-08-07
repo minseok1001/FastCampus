@@ -46,7 +46,7 @@ podTemplate(yaml: '''
 
             dir(path: "${directoryPath}/container"){
                 container('docker') {
-                    sh "docker buildx build --platform=linux/amd64 --build-arg COLOR=${imageTag} -t ${awsECRURL}:${imageTag} ./"
+                    sh "docker buildx build --platform=linux/amd64 --build-arg COLOR=${imageTag} -t ./"
                 }
             }
 
