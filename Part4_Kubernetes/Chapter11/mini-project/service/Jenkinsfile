@@ -3,7 +3,7 @@ def awsKey="aws-key"
 def awsRegion="us-east-1"
 def branch="main"
 def commitMsg="Mini Project CI/CD Pipeline Job"
-def directoryPath="Part4_Kubernetes/Chapter11/mini-project/service"
+def directoryPath="FastCampus/Part4_Kubernetes/Chapter11/mini-project/service"
 def githubEmail="minseok1001@naver.com"
 def githubKey="github-key"
 def githubSSHURL="git@github.com:minseok1001/FastCampus.git"
@@ -46,7 +46,7 @@ podTemplate(yaml: '''
 
             dir(path: "${directoryPath}/container"){
                 container('docker') {
-                    sh "docker buildx build --platform=linux/amd64 --build-arg COLOR=${imageTag} -t ${awsECRURL}:${imageTag} ./Dockerfile"
+                    sh "docker buildx build --platform=linux/amd64 --build-arg COLOR=${imageTag} -t ${awsECRURL}:${imageTag} ./"
                 }
             }
 
