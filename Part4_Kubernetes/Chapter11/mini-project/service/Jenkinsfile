@@ -17,8 +17,8 @@ podTemplate(yaml: '''
                 - name: docker-socket
                   emptyDir: {}
                 containers:
-                - name: docker-1
-                  image: docker:23.0.5-git
+                - name: docker
+                  image: docker/23.0.5-git
                   readinessProbe:
                     exec:
                       command: [sh, -c, "ls -S /var/run/docker.sock"]
@@ -30,7 +30,7 @@ podTemplate(yaml: '''
                   - name: docker-socket
                     mountPath: /var/run
                 - name: docker-daemon
-                  image: docker:23.0.5-dind
+                  image: docker/23.0.5-dind
                   securityContext:
                     privileged: true
                   volumeMounts:
@@ -42,7 +42,7 @@ podTemplate(yaml: '''
 
         stage('Checkout') {
 
-            container('docker-1'){
+            container('docker'){
                 checkout scm
             }
 
@@ -51,7 +51,7 @@ podTemplate(yaml: '''
         stage('Docker Build') {
 
             dir(path: "${directoryPath}/container"){
-                container('docker-1') {
+                container('docker') {
                     sh "docker buildx build --platform=linux/amd64 --build-arg COLOR=${imageTag} -t ${awsECRURL}:${imageTag} ./"
                 }
             }
@@ -60,7 +60,7 @@ podTemplate(yaml: '''
 
         stage('ECR Push') {
 
-            container('docker-1') {
+            container('docker') {
                 docker.withRegistry("https://${awsECRURL}", "ecr:${awsRegion}:${awsKey}") {
                     sh "docker push ${awsECRURL}:${imageTag}"
                 }
@@ -69,7 +69,7 @@ podTemplate(yaml: '''
         }
 
         stage('Deploy'){
-            container('docker-1'){
+            container('docker'){
 
                 git branch: "${branch}",
                     credentialsId: "${githubKey}",
