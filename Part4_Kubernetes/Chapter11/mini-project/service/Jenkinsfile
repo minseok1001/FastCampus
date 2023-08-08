@@ -42,11 +42,6 @@ podTemplate(yaml: '''
 
         stage('Checkout') {
 
-            git branch: 'main',
-                credentialsId: 'jenkins-key',
-                url: 'https://github.com/minseok1001/FastCampus.git'
-
-
             container('docker'){
                 checkout scm
             }
