@@ -40,7 +40,13 @@ podTemplate(yaml: '''
 {
     node(POD_LABEL) {
 
-        
+        stage('Checkout') {
+
+            container("docker"){
+                checkout scm
+            }
+
+        }
 
         stage('Docker Build') {
 
