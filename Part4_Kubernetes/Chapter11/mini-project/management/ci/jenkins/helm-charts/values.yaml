@@ -244,7 +244,7 @@ controller:
     - kubernetes:3900.va_dce992317b_4
     - workflow-aggregator:596.v8c21c963d92d
     - git:5.0.0
-    - configuration-as-code:1625.v27444588cc3d
+    - configuration-as-code:1647.ve39ca_b_829b_42
 
   # Set to false to download the minimum required version of all dependencies.
   installLatestPlugins: true
