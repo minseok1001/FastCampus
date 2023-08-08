@@ -15815,6 +15815,8 @@ spec:
       labels:
         app.kubernetes.io/name: argocd-applicationset-controller
     spec:
+      nodeSelector:
+        az: az2
       containers:
       - command:
         - entrypoint.sh
@@ -15955,6 +15957,8 @@ spec:
                   app.kubernetes.io/part-of: argocd
               topologyKey: kubernetes.io/hostname
             weight: 5
+      nodeSelector:
+        az: az2
       containers:
       - command:
         - /shared/argocd-dex
@@ -16046,6 +16050,8 @@ spec:
       labels:
         app.kubernetes.io/name: argocd-notifications-controller
     spec:
+      nodeSelector:
+        az: az2
       containers:
       - command:
         - argocd-notifications
@@ -16121,6 +16127,8 @@ spec:
                   app.kubernetes.io/part-of: argocd
               topologyKey: kubernetes.io/hostname
             weight: 5
+      nodeSelector:
+        az: az2
       containers:
       - args:
         - --save
@@ -16178,6 +16186,8 @@ spec:
               topologyKey: kubernetes.io/hostname
             weight: 5
       automountServiceAccountToken: false
+      nodeSelector:
+        az: az2
       containers:
       - command:
         - sh
@@ -16442,6 +16452,8 @@ spec:
                   app.kubernetes.io/part-of: argocd
               topologyKey: kubernetes.io/hostname
             weight: 5
+      nodeSelector:
+        az: az2
       containers:
       - command:
         - argocd-server
@@ -16746,6 +16758,8 @@ spec:
                   app.kubernetes.io/part-of: argocd
               topologyKey: kubernetes.io/hostname
             weight: 5
+      nodeSelector:
+        az: az2
       containers:
       - command:
         - argocd-application-controller
