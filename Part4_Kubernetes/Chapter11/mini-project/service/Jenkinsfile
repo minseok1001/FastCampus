@@ -43,7 +43,7 @@ podTemplate(yaml: '''
         stage('Checkout') {
 
             git branch: 'main',
-                credentialsId: 'github-key',
+                credentialsId: 'jenkins-key',
                 url: 'https://github.com/minseok1001/FastCampus.git'
 
 
